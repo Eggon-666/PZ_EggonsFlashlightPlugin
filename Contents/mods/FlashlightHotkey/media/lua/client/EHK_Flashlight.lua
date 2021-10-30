@@ -18,10 +18,10 @@ local function equipFlashlight()
     local SHI = player.getSecondaryHandItem()
     if flashlights[SHI:getFullType()] then
         local isOn = SHI:getActivated()
-        local srcContainer = SHI.getModData().sourceContainer
         if isOn then
             -- jeśli była włączona i ma zapisany container to spakuj do kontenera
             SHI:setActivated(false)
+            local srcContainer = SHI.getModData().sourceContainer
             if srcContainer then
                 local transferAction = ISInventoryTransferAction:new(player, SHI, inv, srcContainer)
                 ISTimedActionQueue.add(transferAction)
