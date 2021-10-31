@@ -15,21 +15,24 @@ local function equipFlashlight()
     local inv = player:getInventory()
 
     -- sprawdź czy latarka jest equipped as secondaryHandItem
-    local SHI = player.getSecondaryHandItem()
-    if flashlights[SHI:getFullType()] then
-        local isOn = SHI:getActivated()
+    local HI = player:getSecondaryHandItem()
+    if not HI or not flashlights[HI:getFullType()] then
+        HI = player:getPrimaryHandItem()
+    end
+    if HI and flashlights[HI:getFullType()] then
+        local isOn = HI:isActivated()
         if isOn then
             -- jeśli była włączona i ma zapisany container to spakuj do kontenera
-            SHI:setActivated(false)
-            local srcContainer = SHI.getModData().sourceContainer
+            HI:setActivated(false)
+            local srcContainer = HI:getModData().sourceContainer
             if srcContainer then
-                local transferAction = ISInventoryTransferAction:new(player, SHI, inv, srcContainer)
+                local transferAction = ISInventoryTransferAction:new(player, HI, inv, srcContainer)
                 ISTimedActionQueue.add(transferAction)
             end
         else
-            if hasCharge(SHI) then
+            if hasCharge(HI) then
                 -- jeśli ma charge to switch
-                SHI:setActivated(true)
+                HI:setActivated(true)
             else
                 -- jeśli nie ma charge powiedz coś
                 player:Say("I think the battery is dead.")
@@ -60,7 +63,7 @@ local function equipFlashlight()
     end
 
     if flashlight then
-        flashlight.getModData().sourceContainer = flashlight:getContainer()
+        flashlight:getModData().sourceContainer = flashlight:getContainer()
         ISInventoryPaneContextMenu.equipWeapon(flashlight, false, false, player:getPlayerNum()) -- (weapon, primary, twoHands, player)
         flashlight:setActivated(true)
     elseif flashlightFound then -- ony uncharged found
