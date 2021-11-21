@@ -1,0 +1,32 @@
+version=1
+id=2652914103
+title=Test mod
+description=Do you want to experience the joy of splicing up zeds with your freshly sharpened weapons ?? Do you want to feel the frustration of the blade going blunter and blunter with EVERY HIT? Do you want to make your precious [b]Katanas[/b] last long when you learn how to properly maintain them? If so, just subscribe.
+description=[h2][b]Features[/b][/h2]
+description=Introduces to the game fully functional [b]sharpness mechanic[/b] for chosen Affected Weapons (see list below). Sharp blades will do much more damage than blunt ones and each hit on zeds, doors or trees will gradually blunten the blade. Blades can be resharpened at the cost of losing some condition. The condtion mechanic for Affected Weapons is overridden too. Repairing is not allowed and will be detected and penalized (it's not blocked though, as it would require overwriting a lot of vanilla code which I don't find to be a good idea). And, yeah, I'm very sorry, but swords are carried on belts. :P
+description=
+description=[b]Check out the slides of the Steam Workshop page to find details on how ESYB works![/b]
+description=[h3]Affected Weapons[/h3]
+description=At present ESYB provides sharpness to 7 vanilla blade weapons: Axe, Hand Axe, Wood Axe, Meat Cleaver, Hunting Knife, Machete and - obviously - Katana.
+description=API for registering and configuring sharpness effects for your weapons will be described shortly. If you like the mod I will consider extending it to all bladed weapons with some default values.
+description=[h3]Requirements[/h3]
+description=ESYB requires:
+description=1) [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2617575303]Eggon's Modding Utils[/url] - my support mod
+description=2) [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2169435993]ModOptions[/url] - providing options interface
+description=[h3]Existing saves[/h3]
+description=I recommend using ESYB for new games. It will work with existing saves, but your weapons will get converted and you won't have the Whetstones to resharpen them.
+description=[h3]Considerations/recommendations[/h3]
+description=Since the sharpening is very dependent on [b]Maintenance[/b] level you might want to use some mod providing Maintenance skill books, such as [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2462898835]More Skill Books[/url], or any other of your liking. If you do that, I strongly recommend decreasing amount of XP gains in ESYB's options.
+description=Another nice addition will be [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2619072426]Weapon Condition Indicator[/url], which shows weapon condition and flashes when condition is decreased. It will warn you when it's good time to stop using a weapon.
+description=[h3]Feedback/Balance[/h3]
+description=I'm looking forward to your feedback especially on the balance and spawn chances, as it is impossible for one person to judge it. ESYB provides a bunch of options which can help you to tweak the balance to your liking. There's no option on the spawn chances unfortunatelly.
+description=I will probably have a look at the relevant strength of the Affected Weapons and try to rebalance them, in particular Katana seems to be too OP. I'd like it to remain the best weapon, but in slightly different way.
+description=[h3]Compatibility[/h3]
+description=ESYB might be incompatible with mods which programatically change [b]condition[/b] or [b]conditionMax[/b] of the Affected Weapons. Let me know if you find any incompatibilities and we'll see what can be done about it.
+description=
+description=If you like this mod, hit the like button and check out [url=https://steamcommunity.com/profiles/76561198093590691/myworkshopfiles/?section=items&appid=108600]my other mods![/url] :)
+description=
+description=[img]https://i.imgur.com/cKVBRWw.gif[/img]
+description=
+tags=
+visibility=private
